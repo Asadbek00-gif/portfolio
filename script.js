@@ -1,35 +1,36 @@
-// ==========================
-// TYPING ANIMATION
-// ==========================
+/* ===========================
+   TYPING EFFECT
+=========================== */
 
 const words = [
-  "Frontend Developer",
-  "Web Designer",
-  "JavaScript Developer",
-  "Creative Coder"
+    "Frontend Developer",
+    "Web Designer",
+    "HTML Developer",
+    "CSS Developer",
+    "JavaScript Learner"
 ];
 
-const typing = document.querySelector(".typing");
-
 let wordIndex = 0;
-let letterIndex = 0;
-let deleting = false;
+let charIndex = 0;
+let isDeleting = false;
+
+const typingElement = document.querySelector(".typing");
 
 function typeEffect() {
 
+    if (!typingElement) return;
+
     const currentWord = words[wordIndex];
 
-    if (!deleting) {
+    if (!isDeleting) {
 
-        typing.textContent = currentWord.substring(0, letterIndex);
+        typingElement.textContent = currentWord.substring(0, charIndex++);
 
-        letterIndex++;
+        if (charIndex > currentWord.length) {
 
-        if (letterIndex > currentWord.length) {
+            isDeleting = true;
 
-            deleting = true;
-
-            setTimeout(typeEffect, 1500);
+            setTimeout(typeEffect, 1200);
 
             return;
 
@@ -37,13 +38,11 @@ function typeEffect() {
 
     } else {
 
-        typing.textContent = currentWord.substring(0, letterIndex);
+        typingElement.textContent = currentWord.substring(0, charIndex--);
 
-        letterIndex--;
+        if (charIndex < 0) {
 
-        if (letterIndex < 0) {
-
-            deleting = false;
+            isDeleting = false;
 
             wordIndex++;
 
@@ -57,87 +56,72 @@ function typeEffect() {
 
     }
 
-    setTimeout(typeEffect, deleting ? 60 : 120);
+    setTimeout(typeEffect, isDeleting ? 60 : 120);
 
 }
 
 typeEffect();
 
+/* ===========================
+   SCROLL ANIMATION
+=========================== */
 
-// ==========================
-// SMOOTH SCROLL
-// ==========================
+const sections = document.querySelectorAll("section");
 
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+function revealSections() {
 
-    anchor.addEventListener("click", function(e){
+    sections.forEach(section => {
 
-        e.preventDefault();
+        const top = section.getBoundingClientRect().top;
 
-        const target = document.querySelector(this.getAttribute("href"));
+        if (top < window.innerHeight - 100) {
 
-        if(target){
-
-            target.scrollIntoView({
-
-                behavior:"smooth"
-
-            });
+            section.classList.add("show");
 
         }
 
     });
 
-});
+}
 
+window.addEventListener("scroll", revealSections);
 
-// ==========================
-// NAVBAR SHADOW
-// ==========================
+revealSections();
 
-window.addEventListener("scroll",()=>{
+/* ===========================
+   HEADER SHADOW
+=========================== */
 
-    const header=document.querySelector("header");
+const header = document.querySelector("header");
 
-    if(window.scrollY>50){
+window.addEventListener("scroll", () => {
 
-        header.style.background="rgba(5,8,22,.95)";
-        header.style.boxShadow="0 10px 30px rgba(0,0,0,.35)";
+    if (window.scrollY > 50) {
 
-    }else{
+        header.style.boxShadow = "0 5px 20px rgba(0,0,0,.4)";
 
-        header.style.background="rgba(5,8,22,.75)";
-        header.style.boxShadow="none";
+    } else {
+
+        header.style.boxShadow = "none";
 
     }
 
 });
 
+/* ===========================
+   SMOOTH ACTIVE LINK
+=========================== */
 
-// ==========================
-// FADE ANIMATION
-// ==========================
+const links = document.querySelectorAll("nav a");
 
-const sections=document.querySelectorAll("section");
+links.forEach(link => {
 
-const observer=new IntersectionObserver(entries=>{
+    link.addEventListener("click", () => {
 
-    entries.forEach(entry=>{
+        links.forEach(item => item.classList.remove("active"));
 
-        if(entry.isIntersecting){
-
-            entry.target.classList.add("show");
-
-        }
+        link.classList.add("active");
 
     });
-
-},{
-    threshold:0.2
-});
-
-sections.forEach(section=>{
-
-    observer.observe(section);
 
 });
