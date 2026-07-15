@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +9,6 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
-
     <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,91 +17,132 @@
 
 <body>
 
-<header>
+    <!-- HEADER -->
+    <header>
+        <nav class="navbar">
 
-<nav class="navbar">
+            <div class="logo">
+                ASADBEK
+            </div>
 
-<div class="logo">
-ASADBEK
-</div>
+            <ul class="menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-<ul class="menu">
+        </nav>
+    </header>
 
-<li><a href="#">Home</a></li>
+    <!-- HOME -->
+    <section class="hero" id="home">
 
-<li><a href="#">About</a></li>
+        <div class="hero-left">
 
-<li><a href="#">Skills</a></li>
+            <p class="tag">
+                👋 Welcome to my Portfolio
+            </p>
 
-<li><a href="#">Projects</a></li>
+            <h1>
+                Hi, I'm <span>Asadbek</span>
+            </h1>
 
-<li><a href="#">FAQ</a></li>
+            <h2 class="typing"></h2>
 
-</ul>
+            <p class="description">
+                I am a passionate Frontend Developer who enjoys creating modern,
+                responsive and user-friendly websites with HTML, CSS and JavaScript.
+            </p>
 
-<div class="menu-btn">
-<i class="ri-menu-3-line"></i>
-</div>
+            <div class="buttons">
 
-</nav>
+                <a href="#projects" class="btn-primary">
+                    View Projects
+                </a>
 
-</header>
+                <a href="#" class="btn-secondary">
+                    Download CV
+                </a>
 
-<section class="hero">
+            </div>
 
-<div class="hero-left">
-    <div class="hero-left">
+        </div>
 
-    <p class="tag">👋 Welcome to my Portfolio</p>
+        <div class="hero-right">
 
-    <h1>
-        Hi, I'm <span>Asadbek</span>
-    </h1>
+            <div class="circle"></div>
 
-    <h2></h2>
+        </div>
 
-    <p class="description">
-        I am a passionate frontend developer who enjoys building modern,
-        responsive, and user-friendly websites using HTML, CSS, and JavaScript.
-    </p>
+    </section>
 
-    <div class="buttons">
-        <a href="#projects" class="btn-primary">View Projects</a>
-        <a href="#" class="btn-secondary">Download CV</a>
+   <section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="about-card">
+
+        <h3>Hello! 👋</h3>
+
+        <p>
+            My name is <strong>Asadbek</strong>. I am passionate about web
+            development and enjoy creating modern, responsive, and beautiful
+            websites. I am constantly learning new technologies and improving
+            my programming skills.
+        </p>
+
     </div>
 
-</div>
+</section>
+    <section id="skills">
 
-<h3>Hello 👋</h3>
+    <h2>My Skills</h2>
 
-<h1>I'm <span>Asadbek</span></h1>
+    <div class="skill">
 
-<h2>Frontend Developer</h2>
+        <span>HTML</span>
 
-<p>
-I create modern, responsive and beautiful websites.
-</p>
+        <div class="bar">
+            <div class="progress html"></div>
+        </div>
 
-<div class="buttons">
+    </div>
 
-<a href="#">Projects</a>
+    <div class="skill">
 
-<a href="#">Download CV</a>
+        <span>CSS</span>
 
-</div>
+        <div class="bar">
+            <div class="progress css"></div>
+        </div>
 
-</div>
+    </div>
 
-<div class="hero-right">
+    <div class="skill">
 
-<div class="circle"></div>
+        <span>JavaScript</span>
 
-</div>
+        <div class="bar">
+            <div class="progress js"></div>
+        </div>
+
+    </div>
 
 </section>
+    <!-- PROJECTS -->
+    <section id="projects">
+        <h2>Projects</h2>
+    </section>
 
-<script src="script.js"></script>
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2>Contact</h2>
+    </section>
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
 
 </body>
-
 </html>

@@ -1,79 +1,35 @@
-// =========================
-// MOBILE MENU
-// =========================
+// ==========================
+// TYPING ANIMATION
+// ==========================
 
-const menuBtn = document.querySelector(".menu-btn");
-const menu = document.querySelector(".menu");
-
-menuBtn.addEventListener("click", () => {
-    menu.classList.toggle("show-menu");
-});
-
-// =========================
-// ACTIVE NAVBAR
-// =========================
-
-const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll(".menu a");
-
-window.addEventListener("scroll", () => {
-
-    let current = "";
-
-    sections.forEach(section => {
-
-        const sectionTop = section.offsetTop - 100;
-
-        if (scrollY >= sectionTop) {
-            current = section.getAttribute("id");
-        }
-
-    });
-
-    navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if (link.getAttribute("href") === "#" + current) {
-            link.classList.add("active");
-        }
-
-    });
-
-});
-
-// =========================
-// TYPING EFFECT
-// =========================
-
-const text = [
-    "Frontend Developer",
-    "Web Designer",
-    "JavaScript Developer",
-    "Creative Coder"
+const words = [
+  "Frontend Developer",
+  "Web Designer",
+  "JavaScript Developer",
+  "Creative Coder"
 ];
 
-const title = document.querySelector(".hero-left h2");
+const typing = document.querySelector(".typing");
 
-let word = 0;
-let letter = 0;
+let wordIndex = 0;
+let letterIndex = 0;
 let deleting = false;
 
-function typing() {
+function typeEffect() {
 
-    const current = text[word];
+    const currentWord = words[wordIndex];
 
     if (!deleting) {
 
-        title.textContent = current.substring(0, letter);
+        typing.textContent = currentWord.substring(0, letterIndex);
 
-        letter++;
+        letterIndex++;
 
-        if (letter > current.length) {
+        if (letterIndex > currentWord.length) {
 
             deleting = true;
 
-            setTimeout(typing, 1500);
+            setTimeout(typeEffect, 1500);
 
             return;
 
@@ -81,25 +37,107 @@ function typing() {
 
     } else {
 
-        title.textContent = current.substring(0, letter);
+        typing.textContent = currentWord.substring(0, letterIndex);
 
-        letter--;
+        letterIndex--;
 
-        if (letter < 0) {
+        if (letterIndex < 0) {
 
             deleting = false;
 
-            word++;
+            wordIndex++;
 
-            if (word >= text.length)
-                word = 0;
+            if (wordIndex >= words.length) {
+
+                wordIndex = 0;
+
+            }
 
         }
 
     }
 
-    setTimeout(typing, deleting ? 60 : 120);
+    setTimeout(typeEffect, deleting ? 60 : 120);
 
 }
 
-typing();
+typeEffect();
+
+
+// ==========================
+// SMOOTH SCROLL
+// ==========================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+
+    anchor.addEventListener("click", function(e){
+
+        e.preventDefault();
+
+        const target = document.querySelector(this.getAttribute("href"));
+
+        if(target){
+
+            target.scrollIntoView({
+
+                behavior:"smooth"
+
+            });
+
+        }
+
+    });
+
+});
+
+
+// ==========================
+// NAVBAR SHADOW
+// ==========================
+
+window.addEventListener("scroll",()=>{
+
+    const header=document.querySelector("header");
+
+    if(window.scrollY>50){
+
+        header.style.background="rgba(5,8,22,.95)";
+        header.style.boxShadow="0 10px 30px rgba(0,0,0,.35)";
+
+    }else{
+
+        header.style.background="rgba(5,8,22,.75)";
+        header.style.boxShadow="none";
+
+    }
+
+});
+
+
+// ==========================
+// FADE ANIMATION
+// ==========================
+
+const sections=document.querySelectorAll("section");
+
+const observer=new IntersectionObserver(entries=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("show");
+
+        }
+
+    });
+
+},{
+    threshold:0.2
+});
+
+sections.forEach(section=>{
+
+    observer.observe(section);
+
+});
