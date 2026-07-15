@@ -1,218 +1,350 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* ===========================
+   RESET
+=========================== */
 
-    <title>Asadbek | Portfolio</title>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+html{
+    scroll-behavior:smooth;
+}
 
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-</head>
+body{
+    background:#050816;
+    color:#ffffff;
+    overflow-x:hidden;
+}
 
-<body>
+/* ===========================
+   NAVBAR
+=========================== */
 
-    <!-- HEADER -->
-    <header>
-        <nav class="navbar">
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:999;
+    background:rgba(5,8,22,.75);
+    backdrop-filter:blur(15px);
+}
 
-            <div class="logo">
-                ASADBEK
-            </div>
+.navbar{
 
-            <ul class="menu">
-                <li><a href="#home" id="nav-home">Home</a></li>
-<li><a href="#about" id="nav-about">About</a></li>
-<li><a href="#skills" id="nav-skills">Skills</a></li>
-<li><a href="#projects" id="nav-projects">Projects</a></li>
-<li><a href="#contact" id="nav-contact">Contact</a></li>
-            </ul>
-            <div class="language-switcher">
+    width:90%;
+    max-width:1200px;
 
-    <button onclick="changeLanguage('en')">ENG</button>
+    margin:auto;
 
-    <button onclick="changeLanguage('uz')">UZ</button>
+    height:80px;
 
-    <button onclick="changeLanguage('ru')">RU</button>
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-</div>
+}
 
-        </nav>
-    </header>
+.logo{
 
-    <!-- HOME -->
-    <section class="hero" id="home">
+    font-size:28px;
+    font-weight:700;
+    color:#5B5FFF;
+    letter-spacing:2px;
 
-        <div class="hero-left">
+}
 
-            <p class="tag" id="welcome">👋 Welcome to my Portfolio</p>
+.menu{
 
-<h1 id="title">
-    Hi, I'm <span>Asadbek</span>
-</h1>
+    display:flex;
+    list-style:none;
+    gap:35px;
 
-<p class="description" id="description">
-    I am a passionate Frontend Developer...
-</p>
+}
 
-<a href="#projects" class="btn-primary" id="btn-projects">
-    View Projects
-</a>
+.menu a{
 
-<a href="#" class="btn-secondary" id="btn-cv">
-    Download CV
-</a>
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+    transition:.3s;
 
-            </div>
+}
 
-        </div>
+.menu a:hover{
 
-        <div class="hero-right">
+    color:#00E5FF;
 
-            <div class="circle"></div>
+}
 
-        </div>
+/* ===========================
+   HERO
+=========================== */
 
-    </section>
+.hero{
 
-   <section id="about">
+    width:90%;
+    max-width:1200px;
 
-    <h2>About Me</h2>
+    min-height:100vh;
 
-    <div class="about-card">
+    margin:auto;
 
-        <h3>Hello! 👋</h3>
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
 
-        <p>
-            My name is <strong>Asadbek</strong>. I am passionate about web
-            development and enjoy creating modern, responsive, and beautiful
-            websites. I am constantly learning new technologies and improving
-            my programming skills.
-        </p>
+    gap:50px;
 
-    </div>
+}
 
-</section>
-    <section id="skills">
+.hero-left{
 
-    <h2>My Skills</h2>
+    flex:1;
 
-    <div class="skill">
+}
 
-        <span>HTML</span>
+.tag{
 
-        <div class="bar">
-            <div class="progress html"></div>
-        </div>
+    display:inline-block;
 
-    </div>
+    padding:10px 22px;
 
-    <div class="skill">
+    border-radius:30px;
 
-        <span>CSS</span>
+    background:rgba(91,95,255,.15);
 
-        <div class="bar">
-            <div class="progress css"></div>
-        </div>
+    border:1px solid rgba(91,95,255,.4);
 
-    </div>
+    color:#00E5FF;
 
-    <div class="skill">
+    margin-bottom:25px;
 
-        <span>JavaScript</span>
+}
 
-        <div class="bar">
-            <div class="progress js"></div>
-        </div>
+.hero-left h1{
 
-    </div>
+    font-size:68px;
 
-</section>
-    <section id="projects">
+    margin-bottom:10px;
 
-    <h2>My Projects</h2>
+}
 
-    <div class="projects-container">
+.hero-left span{
 
-        <div class="project-card">
-            <h3>Personal Portfolio</h3>
-            <p>
-                A modern personal portfolio website created with HTML, CSS and
-                JavaScript. It is fully responsive and includes animations.
-            </p>
-            <a href="https://github.com/Asadbek00-gif/portfolio" target="_blank">
-                View Project
-            </a>
-        </div>
+    color:#8B5CF6;
 
-        <div class="project-card">
-            <h3>2D Parkour Game</h3>
-            <p>
-                A simple 2D platform game built using HTML, CSS and JavaScript
-                with multiple levels and smooth controls.
-            </p>
-            <a href="#" target="_blank">
-                Coming Soon
-            </a>
-        </div>
+}
 
-        <div class="project-card">
-            <h3>Calculator App</h3>
-            <p>
-                A responsive calculator capable of performing basic mathematical
-                operations using JavaScript.
-            </p>
-            <a href="#" target="_blank">
-                Coming Soon
-            </a>
-        </div>
+.typing{
 
-    </div>
+    font-size:30px;
 
-</section>
+    color:#00E5FF;
 
-    <section id="contact">
+    min-height:40px;
 
-    <h2>Contact Me</h2>
+    margin-bottom:25px;
 
-    <div class="contact-container">
+}
 
-        <div class="contact-card">
+.description{
 
-            <h3>📧 Email</h3>
-            <p>asadbekadhamov32@gmail.com</p>
+    color:#bdbdbd;
 
-        </div>
+    line-height:1.8;
 
-        <div class="contact-card">
+    font-size:18px;
 
-            <h3>💻 GitHub</h3>
-            <p>
-                <a href="https://github.com/Asadbek00-gif" target="_blank">
-                    github.com/Asadbek00-gif
-                </a>
-            </p>
+    max-width:550px;
 
-        </div>
+}
 
-        <div class="contact-card">
+/* ===========================
+   BUTTONS
+=========================== */
 
-            <h3>📍 Location</h3>
-            <p>Uzbekistan</p>
+.buttons{
 
-        </div>
+    margin-top:40px;
 
-    </div>
+    display:flex;
 
-</section>
+    gap:20px;
 
-    <!-- JavaScript -->
-    <script src="script.js"></script>
+}
 
-</body>
-</html>
+.buttons a{
+
+    text-decoration:none;
+
+    padding:15px 35px;
+
+    border-radius:40px;
+
+    font-weight:600;
+
+    transition:.4s;
+
+}
+
+.btn-primary{
+
+    color:white;
+
+    background:linear-gradient(135deg,#5B5FFF,#8B5CF6);
+
+}
+
+.btn-secondary{
+
+    color:white;
+
+    border:2px solid #5B5FFF;
+
+}
+
+.buttons a:hover{
+
+    transform:translateY(-5px);
+
+    box-shadow:0 0 25px #5B5FFF;
+
+}
+
+/* ===========================
+   RIGHT SIDE
+=========================== */
+
+.hero-right{
+
+    flex:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+}
+
+.circle{
+
+    width:380px;
+    height:380px;
+
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#5B5FFF,#8B5CF6);
+
+    box-shadow:
+    0 0 40px #5B5FFF,
+    0 0 80px #8B5CF6;
+
+    animation:float 4s ease-in-out infinite;
+
+}
+
+@keyframes float{
+
+0%{
+
+transform:translateY(0);
+
+}
+
+50%{
+
+transform:translateY(-20px);
+
+}
+
+100%{
+
+transform:translateY(0);
+
+}
+
+}
+
+/* ===========================
+   OTHER SECTIONS
+=========================== */
+
+section:not(.hero){
+
+    padding:120px 10%;
+
+}
+
+section h2{
+
+    font-size:45px;
+
+    margin-bottom:30px;
+
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media(max-width:900px){
+
+.navbar{
+
+flex-direction:column;
+
+height:auto;
+
+padding:20px 0;
+
+}
+
+.menu{
+
+margin-top:20px;
+
+flex-wrap:wrap;
+
+justify-content:center;
+
+}
+
+.hero{
+
+flex-direction:column-reverse;
+
+text-align:center;
+
+padding-top:140px;
+
+}
+
+.hero-left h1{
+
+font-size:48px;
+
+}
+
+.description{
+
+margin:auto;
+
+}
+
+.buttons{
+
+justify-content:center;
+
+}
+
+.circle{
+
+width:250px;
+height:250px;
+
+}
+
+}
