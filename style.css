@@ -1,4 +1,10 @@
 /* ===========================
+   GOOGLE FONT
+=========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ===========================
    RESET
 =========================== */
 
@@ -14,67 +20,68 @@ html{
 }
 
 body{
+
     background:#050816;
-    color:#ffffff;
+    color:#fff;
     overflow-x:hidden;
+
 }
 
 /* ===========================
-   NAVBAR
+   HEADER
 =========================== */
 
 header{
+
     position:fixed;
     top:0;
     left:0;
     width:100%;
-    z-index:999;
-    background:rgba(5,8,22,.75);
-    backdrop-filter:blur(15px);
-}
-
-.navbar{
-
-    width:90%;
-    max-width:1200px;
-
-    margin:auto;
-
     height:80px;
 
     display:flex;
     justify-content:space-between;
     align-items:center;
 
+    padding:0 8%;
+
+    background:rgba(5,8,22,.85);
+    backdrop-filter:blur(15px);
+
+    z-index:999;
+
 }
 
 .logo{
 
-    font-size:28px;
+    font-size:30px;
     font-weight:700;
-    color:#5B5FFF;
-    letter-spacing:2px;
+    color:#8B5CF6;
 
 }
 
-.menu{
+nav ul{
 
     display:flex;
-    list-style:none;
     gap:35px;
+
+    list-style:none;
 
 }
 
-.menu a{
+nav ul li a{
 
     color:white;
+
     text-decoration:none;
-    font-weight:500;
+
+    font-size:17px;
+
     transition:.3s;
 
 }
 
-.menu a:hover{
+nav ul li a:hover{
 
     color:#00E5FF;
 
@@ -94,14 +101,16 @@ header{
     margin:auto;
 
     display:flex;
+
     justify-content:space-between;
+
     align-items:center;
 
-    gap:50px;
+    gap:60px;
 
 }
 
-.hero-left{
+.hero-text{
 
     flex:1;
 
@@ -111,29 +120,27 @@ header{
 
     display:inline-block;
 
+    background:rgba(139,92,246,.15);
+
+    color:#00E5FF;
+
     padding:10px 22px;
 
     border-radius:30px;
-
-    background:rgba(91,95,255,.15);
-
-    border:1px solid rgba(91,95,255,.4);
-
-    color:#00E5FF;
 
     margin-bottom:25px;
 
 }
 
-.hero-left h1{
+.hero-text h1{
 
-    font-size:68px;
+    font-size:65px;
 
     margin-bottom:10px;
 
 }
 
-.hero-left span{
+.hero-text h1 span{
 
     color:#8B5CF6;
 
@@ -141,11 +148,11 @@ header{
 
 .typing{
 
-    font-size:30px;
+    height:40px;
+
+    font-size:28px;
 
     color:#00E5FF;
-
-    min-height:40px;
 
     margin-bottom:25px;
 
@@ -153,13 +160,11 @@ header{
 
 .description{
 
-    color:#bdbdbd;
+    color:#cfcfcf;
 
     line-height:1.8;
 
     font-size:18px;
-
-    max-width:550px;
 
 }
 
@@ -169,45 +174,47 @@ header{
 
 .buttons{
 
-    margin-top:40px;
-
     display:flex;
 
     gap:20px;
 
+    margin-top:40px;
+
 }
 
-.buttons a{
-
-    text-decoration:none;
+.btn-primary,
+.btn-secondary{
 
     padding:15px 35px;
 
     border-radius:40px;
 
-    font-weight:600;
+    text-decoration:none;
 
-    transition:.4s;
+    transition:.35s;
+
+    font-weight:600;
 
 }
 
 .btn-primary{
 
-    color:white;
-
     background:linear-gradient(135deg,#5B5FFF,#8B5CF6);
+
+    color:white;
 
 }
 
 .btn-secondary{
 
-    color:white;
-
     border:2px solid #5B5FFF;
+
+    color:white;
 
 }
 
-.buttons a:hover{
+.btn-primary:hover,
+.btn-secondary:hover{
 
     transform:translateY(-5px);
 
@@ -216,22 +223,23 @@ header{
 }
 
 /* ===========================
-   RIGHT SIDE
+   HERO IMAGE
 =========================== */
 
-.hero-right{
+.hero-image{
 
     flex:1;
 
     display:flex;
+
     justify-content:center;
-    align-items:center;
 
 }
 
 .circle{
 
     width:380px;
+
     height:380px;
 
     border-radius:50%;
@@ -242,207 +250,16 @@ header{
     0 0 40px #5B5FFF,
     0 0 80px #8B5CF6;
 
-    animation:float 4s ease-in-out infinite;
+    overflow:hidden;
 
 }
 
-@keyframes float{
+.circle img{
 
-0%{
+    width:100%;
 
-transform:translateY(0);
+    height:100%;
 
-}
-
-50%{
-
-transform:translateY(-20px);
-
-}
-
-100%{
-
-transform:translateY(0);
-
-}
-
-}
-
-/* ===========================
-   OTHER SECTIONS
-=========================== */
-
-section:not(.hero){
-
-    padding:120px 10%;
-
-}
-
-section h2{
-
-    font-size:45px;
-
-    margin-bottom:30px;
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:900px){
-
-.navbar{
-
-flex-direction:column;
-
-height:auto;
-
-padding:20px 0;
-
-}
-
-.menu{
-
-margin-top:20px;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-.hero{
-
-flex-direction:column-reverse;
-
-text-align:center;
-
-padding-top:140px;
-
-}
-
-.hero-left h1{
-
-font-size:48px;
-
-}
-
-.description{
-
-margin:auto;
-
-}
-
-.buttons{
-
-justify-content:center;
-
-}
-
-.circle{
-
-width:250px;
-height:250px;
-
-}
-
-}
-/* ===========================
-   SCROLL ANIMATION
-=========================== */
-
-section{
-
-opacity:0;
-
-transform:translateY(60px);
-
-transition:.8s;
-
-}
-
-section.show{
-
-opacity:1;
-
-transform:translateY(0);
-
-}
-
-/* Hero sahifasi darhol ko'rinsin */
-.hero{
-opacity:1;
-transform:none;
-}
-/* ===========================
-   PROJECTS
-=========================== */
-
-.projects-container{
-
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-    margin-top:50px;
-
-}
-
-.project-card{
-
-    background:rgba(255,255,255,.05);
-    border:1px solid rgba(255,255,255,.1);
-    backdrop-filter:blur(15px);
-
-    border-radius:20px;
-
-    padding:30px;
-
-    transition:.4s;
-
-}
-
-.project-card:hover{
-
-    transform:translateY(-10px);
-    box-shadow:0 0 25px rgba(91,95,255,.6);
-
-}
-
-.project-card h3{
-
-    color:#8B5CF6;
-    margin-bottom:15px;
-
-}
-
-.project-card p{
-
-    color:#d5d5d5;
-    line-height:1.8;
-    margin-bottom:25px;
-
-}
-
-.project-card a{
-
-    display:inline-block;
-    text-decoration:none;
-    color:white;
-
-    background:#5B5FFF;
-
-    padding:12px 25px;
-
-    border-radius:30px;
-
-    transition:.3s;
-
-}
-
-.project-card a:hover{
-
-    background:#00E5FF;
-    color:#050816;
+    object-fit:cover;
 
 }

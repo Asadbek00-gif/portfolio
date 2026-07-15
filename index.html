@@ -1,350 +1,264 @@
-/* ===========================
-   RESET
-=========================== */
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asadbek | Portfolio</title>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+    <link rel="stylesheet" href="style.css">
 
-html{
-    scroll-behavior:smooth;
-}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-body{
-    background:#050816;
-    color:#ffffff;
-    overflow-x:hidden;
-}
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
 
-/* ===========================
-   NAVBAR
-=========================== */
+<header>
 
-header{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    z-index:999;
-    background:rgba(5,8,22,.75);
-    backdrop-filter:blur(15px);
-}
+    <div class="logo">
+        Asadbek
+    </div>
 
-.navbar{
+    <nav>
 
-    width:90%;
-    max-width:1200px;
+        <ul>
 
-    margin:auto;
+            <li><a href="#home">Home</a></li>
 
-    height:80px;
+            <li><a href="#about">About</a></li>
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+            <li><a href="#skills">Skills</a></li>
 
-}
+            <li><a href="#projects">Projects</a></li>
 
-.logo{
+            <li><a href="#contact">Contact</a></li>
 
-    font-size:28px;
-    font-weight:700;
-    color:#5B5FFF;
-    letter-spacing:2px;
+        </ul>
 
-}
+    </nav>
 
-.menu{
+</header>
 
-    display:flex;
-    list-style:none;
-    gap:35px;
+<!-- ================= HOME ================= -->
 
-}
+<section class="hero" id="home">
 
-.menu a{
+    <div class="hero-text">
 
-    color:white;
-    text-decoration:none;
-    font-weight:500;
-    transition:.3s;
+        <p class="tag">
+            👋 Welcome to my Portfolio
+        </p>
 
-}
+        <h1>
+            Hi, I'm <span>Asadbek</span>
+        </h1>
 
-.menu a:hover{
+        <h2 class="typing"></h2>
 
-    color:#00E5FF;
+        <p class="description">
+            I am passionate about building modern, responsive and user-friendly
+            websites using HTML, CSS and JavaScript.
+        </p>
 
-}
+        <div class="buttons">
 
-/* ===========================
-   HERO
-=========================== */
+            <a href="#projects" class="btn-primary">
+                View Projects
+            </a>
 
-.hero{
+            <a href="#" class="btn-secondary">
+                Download CV
+            </a>
 
-    width:90%;
-    max-width:1200px;
+        </div>
 
-    min-height:100vh;
+    </div>
 
-    margin:auto;
+    <div class="hero-image">
 
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
+        <div class="circle">
 
-    gap:50px;
+        </div>
 
-}
+    </div>
 
-.hero-left{
+</section>
 
-    flex:1;
+<!-- ================= ABOUT ================= -->
 
-}
+<section id="about">
 
-.tag{
+    <h2>About Me</h2>
 
-    display:inline-block;
+    <div class="about-card">
 
-    padding:10px 22px;
+        <h3>Hello! 👋</h3>
 
-    border-radius:30px;
+        <p>
+            My name is <strong>Asadbek</strong>.
+            I am a beginner Frontend Developer from Uzbekistan.
+            I enjoy creating modern, responsive websites and continuously
+            improving my programming skills.
+        </p>
 
-    background:rgba(91,95,255,.15);
+    </div>
 
-    border:1px solid rgba(91,95,255,.4);
+</section>
 
-    color:#00E5FF;
+<!-- ================= SKILLS ================= -->
 
-    margin-bottom:25px;
+<section id="skills">
 
-}
+    <h2>My Skills</h2>
 
-.hero-left h1{
+    <div class="skill">
 
-    font-size:68px;
+        <span>HTML</span>
 
-    margin-bottom:10px;
+        <div class="bar">
 
-}
+            <div class="progress html"></div>
 
-.hero-left span{
+        </div>
 
-    color:#8B5CF6;
+    </div>
 
-}
+    <div class="skill">
 
-.typing{
+        <span>CSS</span>
 
-    font-size:30px;
+        <div class="bar">
 
-    color:#00E5FF;
+            <div class="progress css"></div>
 
-    min-height:40px;
+        </div>
 
-    margin-bottom:25px;
+    </div>
 
-}
+    <div class="skill">
 
-.description{
+        <span>JavaScript</span>
 
-    color:#bdbdbd;
+        <div class="bar">
 
-    line-height:1.8;
+            <div class="progress js"></div>
 
-    font-size:18px;
+        </div>
 
-    max-width:550px;
+    </div>
 
-}
+</section>
 
-/* ===========================
-   BUTTONS
-=========================== */
+<!-- ================= PROJECTS ================= -->
 
-.buttons{
+<section id="projects">
 
-    margin-top:40px;
+    <h2>My Projects</h2>
 
-    display:flex;
+    <div class="projects-container">
 
-    gap:20px;
+        <div class="project-card">
 
-}
+            <h3>Personal Portfolio</h3>
 
-.buttons a{
+            <p>
+                A modern portfolio website built using HTML, CSS and JavaScript.
+            </p>
 
-    text-decoration:none;
+            <a href="https://github.com/Asadbek00-gif/portfolio" target="_blank">
+                View Project
+            </a>
 
-    padding:15px 35px;
+        </div>
 
-    border-radius:40px;
+        <div class="project-card">
 
-    font-weight:600;
+            <h3>2D Parkour Game</h3>
 
-    transition:.4s;
+            <p>
+                A simple platform game created with HTML, CSS and JavaScript.
+            </p>
 
-}
+            <a href="#">
+                Coming Soon
+            </a>
 
-.btn-primary{
+        </div>
 
-    color:white;
+        <div class="project-card">
 
-    background:linear-gradient(135deg,#5B5FFF,#8B5CF6);
+            <h3>Calculator App</h3>
 
-}
+            <p>
+                A responsive calculator using JavaScript.
+            </p>
 
-.btn-secondary{
+            <a href="#">
+                Coming Soon
+            </a>
 
-    color:white;
+        </div>
 
-    border:2px solid #5B5FFF;
+    </div>
 
-}
+</section>
 
-.buttons a:hover{
+<!-- ================= CONTACT ================= -->
 
-    transform:translateY(-5px);
+<section id="contact">
 
-    box-shadow:0 0 25px #5B5FFF;
+    <h2>Contact Me</h2>
 
-}
+    <div class="contact-container">
 
-/* ===========================
-   RIGHT SIDE
-=========================== */
+        <div class="contact-card">
 
-.hero-right{
+            <h3>📧 Email</h3>
 
-    flex:1;
+            <p>your_email@example.com</p>
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
+        </div>
 
-}
+        <div class="contact-card">
 
-.circle{
+            <h3>💻 GitHub</h3>
 
-    width:380px;
-    height:380px;
+            <p>
 
-    border-radius:50%;
+                <a href="https://github.com/Asadbek00-gif" target="_blank">
 
-    background:linear-gradient(135deg,#5B5FFF,#8B5CF6);
+                    github.com/Asadbek00-gif
 
-    box-shadow:
-    0 0 40px #5B5FFF,
-    0 0 80px #8B5CF6;
+                </a>
 
-    animation:float 4s ease-in-out infinite;
+            </p>
 
-}
+        </div>
 
-@keyframes float{
+        <div class="contact-card">
 
-0%{
+            <h3>📍 Location</h3>
 
-transform:translateY(0);
+            <p>Uzbekistan</p>
 
-}
+        </div>
 
-50%{
+    </div>
 
-transform:translateY(-20px);
+</section>
 
-}
+<!-- ================= FOOTER ================= -->
 
-100%{
+<footer>
 
-transform:translateY(0);
+    <p>
+        © 2026 Asadbek. All Rights Reserved.
+    </p>
 
-}
+</footer>
 
-}
+<script src="script.js"></script>
 
-/* ===========================
-   OTHER SECTIONS
-=========================== */
-
-section:not(.hero){
-
-    padding:120px 10%;
-
-}
-
-section h2{
-
-    font-size:45px;
-
-    margin-bottom:30px;
-
-}
-
-/* ===========================
-   RESPONSIVE
-=========================== */
-
-@media(max-width:900px){
-
-.navbar{
-
-flex-direction:column;
-
-height:auto;
-
-padding:20px 0;
-
-}
-
-.menu{
-
-margin-top:20px;
-
-flex-wrap:wrap;
-
-justify-content:center;
-
-}
-
-.hero{
-
-flex-direction:column-reverse;
-
-text-align:center;
-
-padding-top:140px;
-
-}
-
-.hero-left h1{
-
-font-size:48px;
-
-}
-
-.description{
-
-margin:auto;
-
-}
-
-.buttons{
-
-justify-content:center;
-
-}
-
-.circle{
-
-width:250px;
-height:250px;
-
-}
-
-}
+</body>
+</html>
