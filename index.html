@@ -26,12 +26,21 @@
             </div>
 
             <ul class="menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#home" id="nav-home">Home</a></li>
+<li><a href="#about" id="nav-about">About</a></li>
+<li><a href="#skills" id="nav-skills">Skills</a></li>
+<li><a href="#projects" id="nav-projects">Projects</a></li>
+<li><a href="#contact" id="nav-contact">Contact</a></li>
             </ul>
+            <div class="language-switcher">
+
+    <button onclick="changeLanguage('en')">ENG</button>
+
+    <button onclick="changeLanguage('uz')">UZ</button>
+
+    <button onclick="changeLanguage('ru')">RU</button>
+
+</div>
 
         </nav>
     </header>
@@ -41,30 +50,23 @@
 
         <div class="hero-left">
 
-            <p class="tag">
-                👋 Welcome to my Portfolio
-            </p>
+            <p class="tag" id="welcome">👋 Welcome to my Portfolio</p>
 
-            <h1>
-                Hi, I'm <span>Asadbek</span>
-            </h1>
+<h1 id="title">
+    Hi, I'm <span>Asadbek</span>
+</h1>
 
-            <h2 class="typing"></h2>
+<p class="description" id="description">
+    I am a passionate Frontend Developer...
+</p>
 
-            <p class="description">
-                I am a passionate Frontend Developer who enjoys creating modern,
-                responsive and user-friendly websites with HTML, CSS and JavaScript.
-            </p>
+<a href="#projects" class="btn-primary" id="btn-projects">
+    View Projects
+</a>
 
-            <div class="buttons">
-
-                <a href="#projects" class="btn-primary">
-                    View Projects
-                </a>
-
-                <a href="#" class="btn-secondary">
-                    Download CV
-                </a>
+<a href="#" class="btn-secondary" id="btn-cv">
+    Download CV
+</a>
 
             </div>
 
@@ -131,15 +133,83 @@
     </div>
 
 </section>
-    <!-- PROJECTS -->
     <section id="projects">
-        <h2>Projects</h2>
-    </section>
 
-    <!-- CONTACT -->
+    <h2>My Projects</h2>
+
+    <div class="projects-container">
+
+        <div class="project-card">
+            <h3>Personal Portfolio</h3>
+            <p>
+                A modern personal portfolio website created with HTML, CSS and
+                JavaScript. It is fully responsive and includes animations.
+            </p>
+            <a href="https://github.com/Asadbek00-gif/portfolio" target="_blank">
+                View Project
+            </a>
+        </div>
+
+        <div class="project-card">
+            <h3>2D Parkour Game</h3>
+            <p>
+                A simple 2D platform game built using HTML, CSS and JavaScript
+                with multiple levels and smooth controls.
+            </p>
+            <a href="#" target="_blank">
+                Coming Soon
+            </a>
+        </div>
+
+        <div class="project-card">
+            <h3>Calculator App</h3>
+            <p>
+                A responsive calculator capable of performing basic mathematical
+                operations using JavaScript.
+            </p>
+            <a href="#" target="_blank">
+                Coming Soon
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
     <section id="contact">
-        <h2>Contact</h2>
-    </section>
+
+    <h2>Contact Me</h2>
+
+    <div class="contact-container">
+
+        <div class="contact-card">
+
+            <h3>📧 Email</h3>
+            <p>asadbekadhamov32@gmail.com</p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h3>💻 GitHub</h3>
+            <p>
+                <a href="https://github.com/Asadbek00-gif" target="_blank">
+                    github.com/Asadbek00-gif
+                </a>
+            </p>
+
+        </div>
+
+        <div class="contact-card">
+
+            <h3>📍 Location</h3>
+            <p>Uzbekistan</p>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- JavaScript -->
     <script src="script.js"></script>

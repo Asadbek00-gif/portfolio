@@ -478,3 +478,40 @@ transform:none;
     width:80%;
 
 }
+/* ===========================
+   LANGUAGE SWITCHER
+=========================== */
+
+.language-switcher{
+
+    display:flex;
+    gap:10px;
+
+}
+
+.language-switcher button{
+
+    padding:8px 14px;
+
+    border:none;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    background:#5B5FFF;
+
+    color:white;
+
+    font-weight:600;
+
+    transition:.3s;
+
+}
+
+.language-switcher button:hover{
+
+    background:#8B5CF6;
+    transform:scale(1.05);
+
+}
