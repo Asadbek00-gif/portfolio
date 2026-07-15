@@ -1,0 +1,233 @@
+/* ==========================
+   GOOGLE FONT
+========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+/* ==========================
+   RESET
+========================== */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050816;
+    color:#fff;
+    overflow-x:hidden;
+}
+
+/* ==========================
+   NAVBAR
+========================== */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    z-index:1000;
+    backdrop-filter:blur(15px);
+    background:rgba(255,255,255,.05);
+    border-bottom:1px solid rgba(255,255,255,.08);
+}
+
+.navbar{
+    width:90%;
+    max-width:1200px;
+    height:80px;
+    margin:auto;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:700;
+    color:#5B5FFF;
+}
+
+.menu{
+    display:flex;
+    list-style:none;
+    gap:40px;
+}
+
+.menu a{
+    text-decoration:none;
+    color:white;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#00E5FF;
+}
+
+.menu-btn{
+    display:none;
+    font-size:28px;
+    cursor:pointer;
+}
+
+/* ==========================
+   HERO
+========================== */
+
+.hero{
+    width:90%;
+    max-width:1200px;
+    margin:auto;
+    min-height:100vh;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.hero-left{
+    width:50%;
+}
+
+.hero-left h3{
+    color:#00E5FF;
+    margin-bottom:10px;
+}
+
+.hero-left h1{
+    font-size:65px;
+    margin-bottom:10px;
+}
+
+.hero-left span{
+    color:#8B5CF6;
+}
+
+.hero-left h2{
+    font-size:30px;
+    color:#d7d7d7;
+    margin-bottom:20px;
+}
+
+.hero-left p{
+    line-height:1.8;
+    max-width:500px;
+    color:#bfbfbf;
+}
+
+.buttons{
+    margin-top:35px;
+    display:flex;
+    gap:20px;
+}
+
+.buttons a{
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:40px;
+    transition:.3s;
+    font-weight:600;
+}
+
+.buttons a:first-child{
+    background:#5B5FFF;
+    color:white;
+}
+
+.buttons a:last-child{
+    border:2px solid #5B5FFF;
+    color:white;
+}
+
+.buttons a:hover{
+    transform:translateY(-5px);
+}
+
+/* ==========================
+   RIGHT SIDE
+========================== */
+
+.hero-right{
+    width:50%;
+    display:flex;
+    justify-content:center;
+}
+
+.circle{
+    width:380px;
+    height:380px;
+    border-radius:50%;
+
+    background:linear-gradient(135deg,#5B5FFF,#8B5CF6);
+
+    box-shadow:
+    0 0 40px #5B5FFF,
+    0 0 80px #8B5CF6;
+
+    animation:float 4s ease-in-out infinite;
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:900px){
+
+.menu{
+display:none;
+}
+
+.menu-btn{
+display:block;
+}
+
+.hero{
+flex-direction:column;
+justify-content:center;
+text-align:center;
+padding-top:100px;
+}
+
+.hero-left,
+.hero-right{
+width:100%;
+}
+
+.hero-left h1{
+font-size:45px;
+}
+
+.buttons{
+justify-content:center;
+}
+
+.circle{
+width:250px;
+height:250px;
+margin-top:40px;
+}
+
+}
